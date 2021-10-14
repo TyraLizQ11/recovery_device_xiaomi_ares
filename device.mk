@@ -38,7 +38,8 @@ AB_OTA_PARTITIONS += \
     vendor \
     odm \
     vbmeta \
-    vbmeta_system
+    vbmeta_system \
+    vendor_boot
 
 PRODUCT_PACKAGES += \
     otapreopt_script \
@@ -54,7 +55,7 @@ AB_OTA_POSTINSTALL_CONFIG += \
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.1-impl.recovery
+    android.hardware.boot@1.1-impl
 
 # fastbootd
 PRODUCT_PACKAGES += \
