@@ -4,11 +4,6 @@
 
 # Currently we dont have e2fsck compiled. So fs check would failed.
 # mount point       fstype    device                                                                flags
-# Persistent Firmware & Properties
-/persist	    ext4      /dev/block/by-name/persist 			                    flags=display="Persist";fsflags=ro
-/persist_image	    emmc      /dev/block/by-name/persist 				            flags=display="Persist";backup=1
-    
-# Partitions updated by stock ROM
 /cache              ext4      /dev/block/by-name/rescue                       flags=display="Cache";
 /protect_f          ext4      /dev/block/by-name/protect1                     flags=display="Protect_f";backup=1;flashimg=1;
 /protect_s          ext4      /dev/block/by-name/protect2                     flags=display="Protect_S";backup=1;flashimg=1;
