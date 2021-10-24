@@ -131,7 +131,7 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 BOARD_VNDK_VERSION := current
 
 # TWRP specific build flags
-TW_DEVICE_VERSION := K40G_beta_3
+TW_DEVICE_VERSION := POCO F3 GT BETA 4
 TW_THEME := portrait_hdpi
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 RECOVERY_SDCARD_ON_DATA := true
@@ -146,3 +146,5 @@ TW_INCLUDE_NTFS_3G := true
 TW_MAX_BRIGHTNESS := 2047
 TW_DEFAULT_BRIGHTNESS := 1200
 TARGET_USES_MKE2FS := true
+TW_HAS_MTP := true
+TW_HAS_NO_RECOVERY_PARTITION := true
