@@ -59,6 +59,9 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-impl \
     bootctrl.$(PRODUCT_PLATFORM).recovery
 
+PRODUCT_PACKAGES_DEBUG += \
+    update_engine_client
+
 # fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
