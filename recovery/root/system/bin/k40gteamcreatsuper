@@ -1,0 +1,25 @@
+#!/system/bin/sh
+
+echo "https://t.me/pocoF3GTOfficial"
+echo "POCO F3 GT & K40 GAMING"
+WorkDir=$1
+SuperImage=$2
+argvs="--metadata-size 65536 --super-name super --sparse  --virtual-ab  --metadata-slots 2 "
+superSize=$(lpdump -j | sed -n '/super/{N;p}' | tail -1 | awk -F '"' '{print$(NF-1)}')
+argvs+="--device super:$superSize "
+group_size=0
+for image in $(ls $WorkDir/*.img );do 
+	img_size=$(wc -c <$image) 
+	imgName=$(basename $image)
+	item_partition=${imgName%.img}
+	group_size=`expr ${img_size} + ${group_size}`
+	argvs+="--partition "$item_partition"_a:readonly:$img_size:main --image "$item_partition"_a=$image --partition "$item_partition"_b:readonly:0:main "
+	echo $img_size $imgName $item_partition $group_size
+done
+
+argvs+="--group main:$group_size "
+argvs+="--output $SuperImage"
+
+if ( lpmake $argvs 2>&1 ); then
+    echo "\nSuccessfully created super image!\n"
+fi
