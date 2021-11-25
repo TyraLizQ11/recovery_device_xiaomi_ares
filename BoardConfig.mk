@@ -130,7 +130,6 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 BOARD_VNDK_VERSION := current
 
 # TWRP specific build flags
-TW_DEVICE_VERSION := POCO F3 GT BETA 4
 TW_THEME := portrait_hdpi
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 RECOVERY_SDCARD_ON_DATA := true
@@ -148,4 +147,40 @@ TW_DEFAULT_BRIGHTNESS := 1200
 TARGET_USES_MKE2FS := true
 TW_HAS_MTP := true
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
+
+# SHRP FLAGS
+SHRP_DEVICE_CODE := ares
+SHRP_PATH := $(DEVICE_PATH)
+SHRP_MAINTAINER := donsenpai05
+SHRP_EDL_MODE := 1
+
+# Device type
+SHRP_REC_TYPE := treble
+SHRP_DEVICE_TYPE := A/B
+SHRP_AB := true
+
+# SHRP recovery path
+SHRP_REC := /dev/block/by-name/boot_a
+
+# SHRP THEME
+SHRP_EXPRESS := true
+SHRP_DARK := true
+
+# SHRP FLASHLIGHT
+SHRP_FLASH := 1
+
+# SHRP storage
+SHRP_INTERNAL := /sdcard
+SHRP_OTG := /usb-otg
+
+# SHRP Addons
+INC_IN_REC_ADDON_1 := true
+
+SHRP_EXTERNAL_ADDON_PATH := $(DEVICE_PATH)/addon
+SHRP_EXTERNAL_ADDON_1_NAME := "Magisk 23.0"
+SHRP_EXTERNAL_ADDON_1_INFO := "Root your Ares/Aresin"
+SHRP_EXTERNAL_ADDON_1_FILENAME := "magisk-23.0.zip"
+SHRP_EXTERNAL_ADDON_1_BTN_TEXT := "Root Your Device"
+SHRP_EXTERNAL_ADDON_1_SUCCESSFUL_TEXT := "Flashed successfully"
+SHRP_INC_IN_REC_EXTERNAL_ADDON_1 := true
 
