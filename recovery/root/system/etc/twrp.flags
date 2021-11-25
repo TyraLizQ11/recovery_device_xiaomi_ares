@@ -4,6 +4,15 @@
 
 # Currently we dont have e2fsck compiled. So fs check would failed.
 # mount point       fstype    device                                                                flags
+
+# Super
+/vendor_a           ext4      /dev/block/mapper/vendor_a 
+/vendor_b           ext4      /dev/block/mapper/vendor_b 
+/product_a          ext4      /dev/block/mapper/product_a 
+/product_b          ext4      /dev/block/mapper/product_b 
+/odm_a              ext4      /dev/block/mapper/odm_a
+/odm_b              ext4      /dev/block/mapper/odm_b
+
 /cache              ext4      /dev/block/by-name/rescue                       flags=display="Cache";
 /protect_f          ext4      /dev/block/by-name/protect1                     flags=display="Protect_f";backup=1;flashimg=1;
 /protect_s          ext4      /dev/block/by-name/protect2                     flags=display="Protect_S";backup=1;flashimg=1;
