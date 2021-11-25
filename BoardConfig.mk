@@ -159,9 +159,6 @@ SHRP_REC_TYPE := treble
 SHRP_DEVICE_TYPE := A/B
 SHRP_AB := true
 
-# SHRP recovery path
-SHRP_REC := /dev/block/by-name/boot_a
-
 # SHRP THEME
 SHRP_EXPRESS := true
 SHRP_DARK := true
