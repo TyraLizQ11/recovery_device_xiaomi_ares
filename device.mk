@@ -65,8 +65,7 @@ PRODUCT_PACKAGES_DEBUG += \
 # fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock.recovery \
-    fastbootd \
-    Iptool
+    fastbootd
 
 # Health hal 
 PRODUCT_PACKAGES += \
