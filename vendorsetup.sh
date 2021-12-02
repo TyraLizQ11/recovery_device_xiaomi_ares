@@ -50,7 +50,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_STATUS_INDENT_RIGHT=48
 	
 	# Magisk
-    export FOX_USE_SPECIFIC_MAGISK_ZIP="$(DEVICE_PATH)/magisk/Magisk-v23.0.zip
+        export FOX_USE_SPECIFIC_MAGISK_ZIP="~/fox_11.0/device/xiaomi/ares/magisk/Magisk-v23.0.zip
 
     # flashlight
     export OF_FLASHLIGHT_ENABLE=1
