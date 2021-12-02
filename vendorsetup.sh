@@ -21,6 +21,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export ALLOW_MISSING_DEPENDENCIES=true
 	export OF_QUICK_BACKUP_LIST="/boot;/data;"
 	export OF_USE_MAGISKBOOT=1
+        export OF_USE_NEW_MAGISKBOOT=1
 	export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
 	export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
 	export OF_NO_TREBLE_COMPATIBILITY_CHECK=1
@@ -36,7 +37,10 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_USE_GREEN_LED=0
 	export FOX_ENABLE_APP_MANAGER=1
 	export OF_TARGET_DEVICES="ares,aresin"
-	
+
+        # Boot Partition
+        export FOX_RECOVERY_BOOT_PARTITION="/dev/block/by-name/boot"
+
 	# OTA
 	export OF_KEEP_DM_VERITY_FORCED_ENCRYPTION=1
 	export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
@@ -50,10 +54,13 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_STATUS_INDENT_RIGHT=48
 	
 	# Magisk
-        export FOX_USE_SPECIFIC_MAGISK_ZIP="$(DEVICE_PATH)/magisk/Magisk-v23.0.zip
+        export FOX_USE_SPECIFIC_MAGISK_ZIP="$DEVICE_PATH/magisk/Magisk-v23.0.zip
 
-    # flashlight
-    export OF_FLASHLIGHT_ENABLE=1
+        # work around issues with the binary Android 12 storage.xml files
+        export OF_SKIP_DECRYPTED_ADOPTED_STORAGE=1
+
+        # flashlight
+        export OF_FLASHLIGHT_ENABLE=1
     
 	# R11
 	export FOX_R11=2
